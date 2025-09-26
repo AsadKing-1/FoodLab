@@ -1,0 +1,194 @@
+.recepts-list {
+    display: grid;
+    max-width: 1250px;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.search-container {
+    max-width: 1210px;
+    margin: 0px auto;
+    padding-top: 150px;
+    padding-bottom: 35px;
+
+    display: flex;
+    align-items: center;
+    align-items: center;
+
+
+    svg {
+        color: white;
+        margin-left: -50px;
+    }
+
+    input {
+        outline: none;
+        width: 100%;
+        padding: 15px;
+        margin-left: -20px;
+        border-radius: 10px;
+        color: white;
+        font-size: 18px;
+        transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.26);
+        border: 2px solid rgba(255, 255, 255, 0.26);
+
+        &:focus {
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        }
+
+        &::placeholder {
+            color: white;
+        }
+    }
+}
+
+
+
+.meal-card {
+    width: 400px;
+    border-radius: 16px;
+    overflow: hidden;
+    color: white;
+    background: rgba(255, 255, 255, 0.265);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .meal-card-image {
+        position: relative;
+
+        .star {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            border: none;
+            top: 3%;
+            left: 85%;
+            background: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            color: rgb(255, 230, 0);
+
+            &:active {
+                animation: pop 1s ease;
+            }
+        }
+    }
+
+    .meal-info {
+        padding: 16px;
+
+        h3 {
+            font-size: 25px;
+            font-weight: bold;
+            margin: 0 0 8px 0;
+        }
+
+        p {
+            font-size: 18px;
+            color: #ffffff;
+            margin: 0 0 12px 0;
+        }
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 15px;
+            background: #4caf50;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.25s ease;
+
+            svg {
+                width: 30px;
+                height: 30px;
+            }
+
+            &:hover {
+                background: #43a047;
+            }
+        }
+    }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.4);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 426px) {
+    .recepts-list {
+        grid-template-columns: repeat(1, 1fr);
+        place-items: center;
+    }
+
+    .meal-card {
+        width: 370px;
+    }
+
+    .search-container {
+        width: 340px;
+
+        input {
+            width: 100%;
+            margin-left: -16px;
+        }
+    }
+}
+
+@media (max-width: 376px) {
+    .meal-card {
+        width: 320px;
+    }
+
+    .search-container {
+        width: 300px;
+        padding-top: 120px;
+    }
+}
+
+@media (max-width: 321px) {
+    .meal-card {
+        width: 300px;
+
+        .meal-card-image {
+            .star {
+                left: 80%;
+            }
+        }
+    }
+    .search-container{
+        width: 265px;
+    }
+}
